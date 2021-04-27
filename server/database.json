@@ -1,0 +1,35 @@
+{
+    "items":[
+        {"title": "Jeans", "price": "30.00$", "category": "Clothes", "img": "https://media.gq.com/photos/5e6fa2efddfa2c0008aa9f55/master/w_2000,h_1333,c_limit/gap.jpg"},
+
+        {"title": "Jacket", "price": "43.00$", "category": "Clothes", "img": "https://i.pinimg.com/originals/19/ab/fd/19abfde066ad6ff0b3b4d0a7d00ca16b.jpg"},
+
+        {"title": "T-Shirt", "price": "25.00$", "category": "Clothes", "img": "https://www.kingsanddukes.com/images/tommy-hilfiger-mens-colour-block-navy-t-shirt-p5760-27606_image.jpg"},
+
+        {"title": "Sweatshirt ", "price": "27.00$", "category": "Clothes", "img": "https://jkfitness.bg/image/cache/catalog/Benlee/Benlee-men-hooded-sweatshirt-marwood-jkfitness.bg-900x900.jpg"},
+
+        {"title": "Оfficial Shoes ", "price": "75.00$", "category": "Shoes", "img": "https://i.pinimg.com/originals/cb/60/d5/cb60d52880ace670b75b28764e79995a.jpg"},
+
+        {"title": "Sport Shoes", "price": "55.00$", "category": "Shoes", "img": "hhttps://images-na.ssl-images-amazon.com/images/I/512rsY-8ufL._UL1000_.jpg"},
+
+        {"title": "Sneaker", "price": "64.00$", "category": "Shoes", "img": "https://ae01.alicdn.com/kf/HTB1RsxJaFzsK1Rjy1Xbq6xOaFXau/Men-Casual-Shoes-Breathable-Mens-Sneakers-2019-New-Shoes-Men-Sneakers-Non-slip-Comfortable-Footwear-Male.jpg"},
+
+        {"title": "Versace Greca", "price": "159.00$", "category": "Watches", "img": "https://www.versace.com/dw/image/v2/ABAO_PRD/on/demandware.static/-/Sites-ver-master-catalog/default/dw34e790a8/original/90_PVEVI006-P0020_PNUL_20_GrecaLogoWatch-Watches-versace-online-store_4_1.jpg"},
+
+        {"title": "Wrist", "price": "88.00$", "category": "Watches", "img": "https://rukminim1.flixcart.com/image/332/398/kka1si80/watch/4/t/k/tw-02524-teenager-luxurious-fashion-silicone-black-colored-led-original-imafznht7bzfmj7d.jpeg?q=50"},
+
+        {"title": "Casio G-Shock", "price": "212.00$", "category": "Watches", "img": "hhttps://s.yimg.com/aah/4-watches/casio-g-shock-light-gray-digital-analog-watch-ga100l-7a-26.gif"},
+
+        {"title": "The Pilot’s Watch", "price": "199.00$", "category": "Watches", "img": "https://www.iwc.com/content/dam/homepage/ww-2021/IW503605_tile_1.717.jpg.transform.article_image_335_2x.jpeg"},
+
+        {"title": "Cap", "price": "15.00$", "category": "Hats", "img": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1554410529-best-hats-12-1554410523.jpg"},
+
+        {"title": "Cap", "price": "21.00$", "category": "Hats", "img": "https://prasnootdel.news/pics/img/1-25651-2018-%D0%BC%D1%8A%D0%B6%D0%BA%D0%B8-%D0%BF%D0%B0%D0%BC%D1%83%D1%87%D0%BD%D0%B8-%D1%88%D0%B0%D0%BF%D0%BA%D0%B8-%D0%B2%D1%8A%D0%B7%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D0%B8%D1%88%D0%BD%D0%BE%D1%82%D0%BE-%D0%BF%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-women-black-hat-cap-summer-unisex-hats.jpeg"},
+
+        {"title": "Loritta Winter Hat", "price": "31.00$", "category": "Hats", "img": "https://images-na.ssl-images-amazon.com/images/I/816-sEy2CYL._AC_UL1500_.jpg"},
+
+        {"title": "Audi Cap Black", "price": "31.00$", "category": "Hats", "img": "https://www.auto-moto-fans.com/wp-content/uploads/2019/09/hats_IMG_0021.jpg"}
+
+
+    ]
+}
