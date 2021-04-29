@@ -1,7 +1,12 @@
 import './Navigation.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../App';
 import { Link } from 'react-router-dom';
 
 const Navigation = () => {
+
+   const loggedInUser = useContext(AuthContext);
+
    return (
       <nav className="navbar">
          <h1>eCommerce</h1>
@@ -21,9 +26,21 @@ const Navigation = () => {
             <li>
                <Link to="/contacts">Contacts</Link>
             </li>
-            <li className="signIn">
-               <Link to="/login">Sign In</Link>
-            </li>
+            {loggedInUser
+               ? (<>
+                  <li>
+                     <Link to="/cart" className="user">Cart</Link>
+                  </li>
+                  <li>
+                     <Link to="/profile" className="user">Profile</Link>
+                  </li>
+                  <li>
+                     <Link to="/logout" className="user">Logout</Link>
+                  </li>
+               </>
+               )
+               : <li className="signIn"><Link to="/login">Sign in</Link></li>
+            }
          </ul>
       </nav>
    );

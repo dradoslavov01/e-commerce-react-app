@@ -32,8 +32,8 @@
 }
 
 .contacts_container form button {
-    font-size: 18px;
-    padding: 10px;
+    font-size: 22px;
+    padding: 8px;
     border-radius: 5px rgb(16, 129, 204);
     outline: none;
     background-color: rgb(16, 129, 204);
@@ -61,20 +61,26 @@
 
 .contacts_content .information h3{
   font-size: 20px;
+  color:rgb(77, 77, 77);
+  margin-bottom: 30px;
 }
 
 .contacts_content .information p{
-   margin-top: -20px;
+   margin-top: -30px;
+   color:rgb(77, 77, 77);
 }
 
 .contacts_content .information h4{
    margin-top: 15px;
    font-size: 21px;
    margin-bottom: 23px;
+   color:rgb(77, 77, 77);
 }
 
-.contacts_content .information span{
-   color: blue;
+.contacts_content .information h5{
+   color:rgb(77, 77, 77);
+   font-size: 20px;
+   margin-top: 40px;
 }
 
  .contacts_content .contacts_icons{
@@ -85,7 +91,7 @@
 
   .contacts_content .contacts_icons ._icons{
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
  }
 
 

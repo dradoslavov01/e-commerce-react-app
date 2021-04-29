@@ -27,7 +27,7 @@ const ContactsPage = () => {
                <p>21 Hristo Botev Street</p>
                <h3>Sofia, Bulgaria</h3>
                <h4>+1 333 123456</h4>
-               <span>daniradoslavov@abv.bg</span>
+               <h5>daniradoslavov@abv.bg</h5>
             </div>
          </div>
       </div>
