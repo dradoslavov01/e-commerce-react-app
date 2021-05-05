@@ -28,7 +28,8 @@ const Navigation = () => {
             </li>
             {loggedInUser
                ? (<>
-                  <li>
+                  <li className="cart_container">
+                     <span className="cart_counter">1</span>
                      <Link to="/cart" className="user">Cart</Link>
                   </li>
                   <li>

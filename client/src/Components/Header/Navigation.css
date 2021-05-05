@@ -44,11 +44,22 @@
 .navbar ul .user{
     background-color: rgb(16, 129, 204);
 }
-
-.navbar ul .user:hover {
-    background-color: rgb(8, 86, 138);
+.navbar ul .cart_connainer{
+   position: relative;
+   display: inline-block;
 }
 
+.navbar ul .cart_counter{
+    position: absolute;
+    top: 0px;
+    left: 335px;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    color:#fff;
+}
 
 .navbar ul li a{
     display: block;
@@ -63,6 +74,14 @@
 .navbar ul li a:hover {
     background-color: rgb(150, 150, 150);
     transform: translateY(-7px);
+}
+
+.navbar ul li .user:hover{
+    background-color: rgb(8, 86, 138);
+}
+
+.navbar ul .user:nth-child(2):hover .navbar ul li span{
+    background-color: black;
 }
 
 .navbar ul .signIn {

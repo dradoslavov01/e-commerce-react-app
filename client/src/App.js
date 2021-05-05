@@ -18,7 +18,6 @@ function App() {
 
   const [loggedInUser, setloggedInUser] = useState(null);
 
-  console.log(loggedInUser);
   useEffect(() => {
     auth.onAuthStateChanged(setloggedInUser);
   }, [loggedInUser]);

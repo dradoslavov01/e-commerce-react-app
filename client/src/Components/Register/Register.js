@@ -51,7 +51,7 @@ const RegisterPage = ({
                     <input id="pass" type="password" name="rePass" placeholder="Confirm your password" />
                 </div>
                 <button>Sign Up</button>
-                <p> Don't have an account? <Link to="/login">Login</Link></p>
+                <p>Already have an account? <Link to="/login">Login</Link></p>
             </form>
         </div>
     );
