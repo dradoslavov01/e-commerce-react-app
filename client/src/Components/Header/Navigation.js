@@ -1,11 +1,24 @@
 import './Navigation.css'
-import { useContext } from 'react';
+import { useContext, useEffect, useState  } from 'react';
 import { AuthContext } from '../../App';
 import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+import { connect } from 'react-redux';
+
+
+const Navigation = (props) => {
 
    const loggedInUser = useContext(AuthContext);
+
+   const [cartCount, setCartCount] = useState(0);
+
+   useEffect(() => {
+      let count = 0;
+      props.cart.forEach(item => {
+         count += item.qty
+      });
+      setCartCount(count);
+   }, [props.cart, cartCount])
 
    return (
       <nav className="navbar">
@@ -29,7 +42,12 @@ const Navigation = () => {
             {loggedInUser
                ? (<>
                   <li className="cart_container">
-                     <span className="cart_counter">1</span>
+                     {cartCount> 0
+                        ? (
+                           <span className="cart_counter">{cartCount}</span>
+                        )
+                        : ''
+                     }
                      <Link to="/cart" className="user">Cart</Link>
                   </li>
                   <li>
@@ -47,7 +65,11 @@ const Navigation = () => {
    );
 }
 
+const mapStateToProps = state => {
+   return {
+      cart: state.cart
+   };
+};
 
 
-
-export default Navigation;
+export default connect(mapStateToProps)(Navigation);

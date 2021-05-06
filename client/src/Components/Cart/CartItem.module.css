@@ -4,6 +4,7 @@
     width: 880px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     margin-top: 30px;
+    position: relative;
 }
 
 .cartItem .quantity {
@@ -14,23 +15,26 @@
 .cartItem img{
    width: 100px;
    height: 100px;
-   margin-right: 100px;
+   margin-right: 70px;
 }
 
 .cartItem h3 {
-    margin-right: 100px;
+    margin-right: 80px;
     font-size: 21px;
+    width:100%;
 }
 
 .cartItem p {
     margin-right: 100px;
     font-size: 19px;
+    width:82px;
 }
 
 .cartItem h2 {
-    margin-left: 80px;
+    margin-left: 90px;
     font-size: 20px;
     margin-right: 20px;
+
 }
 
 .cartItem span {
@@ -39,7 +43,35 @@
    
 }
 
-.cartItem button {
-   font-size: 16px;
+.cartItem .quantity button {
+   font-size: 12px;
    padding: 0 5px;
+}
+
+.cartItem .quantity button:hover {
+   cursor: pointer;
+}
+
+.cartItem .remove_item{
+    color: red;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 60px;
+    margin-left: 70px;
+    transition: 0.2s;
+
+}
+
+.cartItem .remove_item:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+@media (max-width:600px) {
+    .cartItem .remove_item {
+      position: relative;
+      bottom: 220px;
+      left:70px;
+      margin-bottom: 0px;
+    }
 }

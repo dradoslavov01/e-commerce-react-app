@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router';
 import './App.css';
 
 import Navigation from './Components/Header/Navigation';
-import HomePage from './Components/Home/Home';
+import ItemsPage from './Components/Items/Items';
 import LoginPage from './Components/Login/Login';
 import RegisterPage from './Components/Register/Register';
 import FooterPage from './Components/Footer/Footer';
@@ -28,8 +28,8 @@ function App() {
       <AuthContext.Provider value={loggedInUser}>
         <Navigation />
 
-        <Route path="/" exact component={HomePage} />
-        <Route path="/category/:category" component={HomePage} />
+        <Route path="/" exact component={ItemsPage} />
+        <Route path="/category/:category" component={ItemsPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/contacts" component={ContactsPage} />

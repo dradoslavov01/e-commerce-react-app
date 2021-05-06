@@ -5,4 +5,4 @@ export const getAllItems = (category) => {
     return fetch(`${url}/items${type}`)
             .then(res => res.json())
             .catch(err => alert(err));
-}
+};
