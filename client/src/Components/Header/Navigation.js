@@ -10,16 +10,6 @@ const Navigation = (props) => {
 
    const loggedInUser = useContext(AuthContext);
 
-   const [cartCount, setCartCount] = useState(0);
-
-   useEffect(() => {
-      let count = 0;
-      props.cart.forEach(item => {
-         count += item.qty
-      });
-      setCartCount(count);
-   }, [props.cart, cartCount])
-
    return (
       <nav className="navbar">
          <h1>eCommerce</h1>
@@ -42,9 +32,9 @@ const Navigation = (props) => {
             {loggedInUser
                ? (<>
                   <li className="cart_container">
-                     {cartCount> 0
+                     {props.cart.length > 0
                         ? (
-                           <span className="cart_counter">{cartCount}</span>
+                           <span className="cart_counter">{props.cart.length }</span>
                         )
                         : ''
                      }
