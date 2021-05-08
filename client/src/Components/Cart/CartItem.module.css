@@ -10,6 +10,8 @@
 .cartItem .quantity {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .cartItem img{
@@ -42,10 +44,12 @@
 .cartItem .quantity span {
    font-size: 21px;
    margin: 0 5px;
+
 }
 
 .cartItem .quantity button {
-   font-size: 12px;
+   width: 25px;
+   height: 25px;
    padding: 0 5px;
 }
 

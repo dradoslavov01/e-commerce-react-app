@@ -38,9 +38,39 @@
 }
 
 .cart_container .empty_cart h2 {
-    font-size: 35px;
     color: red;
     text-align: center;
+    animation: empty 2s ease-in infinite;
+}
+
+@keyframes empty {
+  0% {
+    font-size: 31px;
+  }
+  15% {
+    font-size: 32px;
+  }
+  25% {
+    font-size: 33px;
+  }
+  35% {
+    font-size: 34px;
+  }
+  50% {
+    font-size: 35px;
+  }
+  65% {
+    font-size: 34px;
+  }
+  75% {
+    font-size: 33px;
+  }
+  85% {
+    font-size: 32px;
+  }
+  100% {
+    font-size: 31px;
+  }
 }
 
 .cart_container .empty_cart p {
@@ -103,5 +133,5 @@
 .cart_container .empty_cart p {
     font-size: 19px;
     margin-top: 10px;
-}
+    }
 }

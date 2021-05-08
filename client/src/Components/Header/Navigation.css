@@ -59,6 +59,7 @@
     background-color: red;
     text-align: center;
     color:#fff;
+    z-index: 11;
 }
 
 .navbar ul li a{
@@ -78,6 +79,7 @@
 
 .navbar ul li .user:hover{
     background-color: rgb(8, 86, 138);
+    z-index: 10;
 }
 
 .navbar ul .user:nth-child(2):hover .navbar ul li span{

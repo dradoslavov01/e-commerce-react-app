@@ -1,6 +1,6 @@
 import style from './Cart.module.css';
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import CartItem from './CartItem';
 
 import { removeAllItems } from '../../redux/actions'
@@ -26,7 +26,10 @@ const CartPage = (props) => {
          })}
          {props.cart.length > 0
             ? <div className={style.cart_purchase}>
-               <button onClick={() => props.removeAllItems()}>Purchase</button>
+               <button onClick={() => {
+                  props.removeAllItems();
+                  props.history.push('/purchase');
+               }}>Purchase</button>
                <h2>{totalPrice}$</h2>
             </div>
             : <div className={style.empty_cart}>

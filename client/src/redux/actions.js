@@ -10,9 +10,27 @@ export const addToCart = (itemId) => {
     };
 };
 
+export const addToFavorite = (itemId) => {
+    return {
+        type: actionTypes.ADD_TO_FAVORITE,
+        payload: {
+            id: itemId
+        }
+    };
+};
+
 export const removeFromCart = (itemId) => {
     return {
         type: actionTypes.REMOVE_FROM_CART,
+        payload: {
+            id: itemId
+        }
+    };
+};
+
+export const removeFromFavorite = (itemId) => {
+    return {
+        type: actionTypes.REMOVE_FROM_FAVORITE,
         payload: {
             id: itemId
         }

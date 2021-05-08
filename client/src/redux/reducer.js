@@ -4,6 +4,7 @@ import { getAllItems } from '../services/services'
 
 const INITIAL_STATE = {
    products: null, //will be array
+   favoriteItems: [],
    cart: [],
    currentItem: null,
 };
@@ -38,6 +39,25 @@ const reducer = (state = INITIAL_STATE, action) => {
          return {
             ...state,
             cart: state.cart.filter(item => item.id !== action.payload.id)
+         };
+      case actionTypes.ADD_TO_FAVORITE:
+
+         const item = state.products.find(item => item.id === action.payload.id);
+         const inFavorite = state.favoriteItems.find(item => item.id === action.payload.id ? true : false);
+
+         return {
+            ...state,
+            favoriteItems: inFavorite
+               ? state.favoriteItems.map((item) => item.id === action.payload.id
+                  ? { ...item }
+                  : item
+               )
+               : [...state.favoriteItems, { ...item }],
+         };
+      case actionTypes.REMOVE_FROM_FAVORITE:
+         return {
+            ...state,
+            favoriteItems: state.favoriteItems.filter(item => item.id !== action.payload.id)
          };
       case actionTypes.ADJUST_QTY:
          return {

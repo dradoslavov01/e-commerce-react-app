@@ -8,7 +8,10 @@ import LoginPage from './Components/Login/Login';
 import RegisterPage from './Components/Register/Register';
 import FooterPage from './Components/Footer/Footer';
 import ContactsPage from './Components/Contacts/Contacts';
-import CartPage from './Components/Cart/Cart'
+import CartPage from './Components/Cart/Cart';
+import ParchasePage from './Components/Purchase/Purchase';
+import ProfilePage from './Components/Profile/Profile';
+import FavoriteItemsPage from './Components/FavoriteItems/FavoriteItems';
 
 import { auth } from './utils/firebase';
 
@@ -34,6 +37,9 @@ function App() {
         <Route path="/register" component={RegisterPage} />
         <Route path="/contacts" component={ContactsPage} />
         <Route path="/cart" component={CartPage} />
+        <Route path="/purchase" component={ParchasePage} />
+        <Route path="/profile" exact component={ProfilePage} />
+        <Route path="/profile/favorite-items" component={FavoriteItemsPage} />
         <Route path="/logout" render={() => {
           auth.signOut();
           return <Redirect to="/" />
