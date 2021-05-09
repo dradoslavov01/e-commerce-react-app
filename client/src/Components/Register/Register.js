@@ -1,4 +1,5 @@
 import style from './Register.module.css';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
@@ -9,6 +10,7 @@ const RegisterPage = ({
     history
 }) => {
 
+    const [errorHandler, setErrorHandler] = useState('');
 
     const onRegisterSubmitHandler = (e) => {
         e.preventDefault();
@@ -18,23 +20,24 @@ const RegisterPage = ({
 
 
         if (!email || !password || !rePass) {
-            return alert('All fields are required!');
+            return setErrorHandler('All fields are required!');
         }
 
         if(password !== rePass) {
-            return alert('Passwords don\'t match!');
+            return setErrorHandler('Passwords don\'t match!');
         }
 
         auth.createUserWithEmailAndPassword(email, password)
             .then(() => {
                 history.push('/')
-            }).catch(err => alert(err))
+            }).catch(err => setErrorHandler(err.message));
     };
 
     return (
         <div className={style.form_container}>
             <form className={style.form} onSubmit={onRegisterSubmitHandler}>
                 <h2>Create an account</h2>
+                <div className={style.errorMsg}>{errorHandler}</div>
                 <label htmlFor="email">Email</label>
                 <div className={style.input_content}>
                     <EmailIcon className={style.icons} />

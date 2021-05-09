@@ -1,5 +1,5 @@
 import './Navigation.css'
-import { useContext, useEffect, useState  } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../../App';
 import { Link } from 'react-router-dom';
 
@@ -34,13 +34,19 @@ const Navigation = (props) => {
                   <li className="cart_container">
                      {props.cart.length > 0
                         ? (
-                           <span className="cart_counter">{props.cart.length }</span>
+                           <span className="cart_counter">{props.cart.length}</span>
                         )
                         : ''
                      }
                      <Link to="/cart" className="user">Cart</Link>
                   </li>
-                  <li>
+                  <li className="profile_container">
+                     {props.favoriteItems.length > 0
+                        ? (
+                           <span className="favItems_counter">{props.favoriteItems.length}</span>
+                        )
+                        : ''
+                     }
                      <Link to="/profile" className="user">Profile</Link>
                   </li>
                   <li>
@@ -57,7 +63,8 @@ const Navigation = (props) => {
 
 const mapStateToProps = state => {
    return {
-      cart: state.cart
+      cart: state.cart,
+      favoriteItems: state.favoriteItems
    };
 };
 

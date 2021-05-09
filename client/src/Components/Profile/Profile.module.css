@@ -10,7 +10,7 @@
     align-items: center;
     padding: 5px 60px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .profile_container .profile_content .profile_icon{
@@ -29,6 +29,7 @@
 }
 
 .profile_container .profile_content .fav_items {
+    position: relative;
     text-decoration: none;
     font-size: 20px;
     background-color: rgb(16, 129, 204);
@@ -36,7 +37,7 @@
     padding: 6px;
     border-radius: 3px;
     margin-bottom: 40px;
-    transition: 0.2s ease-out;
+    transition: transform 0.2s ease-out;
 }
 
 .profile_container .profile_content .fav_items:hover {

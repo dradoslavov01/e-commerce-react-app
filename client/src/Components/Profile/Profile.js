@@ -15,7 +15,7 @@ const ProfilePage = (props) => {
             <AccountBoxIcon className={style.profile_icon} />
             <h3>Username: {user != null ? user.email.slice(0, -7) : ''}</h3>
             <p>Items in your cart: {props.cart.length}</p>
-            <Link to="/profile/favorite-items" className={style.fav_items}>Favorite items</Link>
+            <Link to="/profile/favorite-items" className={style.fav_items}>Favorite items: {props.favoriteItems.length}</Link>
          </div>
       </div>
    );
@@ -23,9 +23,11 @@ const ProfilePage = (props) => {
 
 const mapStateToPtops = state => {
    return {
-      cart: state.cart
+      cart: state.cart,
+      favoriteItems: state.favoriteItems
    };
 };
+
 
 
 export default connect(mapStateToPtops)(ProfilePage);

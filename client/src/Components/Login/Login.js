@@ -1,4 +1,5 @@
 import style from './Login.module.css';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
@@ -9,27 +10,30 @@ const LoginPage = ({
     history
 }) => {
 
+    const [errorHandler, setErrorHandler] = useState('');
+
     const onLoginFormSubmitHandler = (e) => {
         e.preventDefault();
 
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        if(!email || !password) {
-            return alert('All fields are required!')
+        if (!email || !password) {
+            return setErrorHandler('All fields are required!');
         }
 
         auth.signInWithEmailAndPassword(email, password)
             .then(() => {
                 history.push('/');
             })
-            .catch(err => alert(err));
+            .catch(err => setErrorHandler(err.message));
     };
 
     return (
         <div className={style.form_container}>
             <form className={style.form} onSubmit={onLoginFormSubmitHandler}>
                 <h2>Sign In</h2>
+                <div className={style.errorMsg}>{errorHandler}</div>
                 <label htmlFor="email">Email</label>
                 <div className={style.input_content}>
                     <EmailIcon className={style.icons} />

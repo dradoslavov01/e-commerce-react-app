@@ -44,15 +44,36 @@
 .navbar ul .user{
     background-color: rgb(16, 129, 204);
 }
-.navbar ul .cart_connainer{
+.navbar ul .cart_conainer{
    position: relative;
    display: inline-block;
 }
 
-.navbar ul .cart_counter{
+
+.navbar ul .cart_container{
+   position: relative;
+   display: inline-block;
+}
+.navbar ul .cart_container .cart_counter{
     position: absolute;
-    top: 0px;
-    left: 335px;
+    top: 0;
+    right: 0;
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: red;
+    text-align: center;
+    color:#fff;
+    z-index: 11;
+}
+.navbar ul .profile_container{
+   position: relative;
+   display: inline-block;
+}
+.navbar ul .profile_container .favItems_counter{
+    position: absolute;
+    top: 0;
+    right: 0;
     height: 23px;
     width: 23px;
     border-radius: 50%;
@@ -141,16 +162,4 @@
     .navbar ul .dropdown_content {
         position: relative;
     }
-
-    .navbar ul .cart_counter{
-    position: absolute;
-    top: 175px;
-    left: 85px;
-    height: 23px;
-    width: 23px;
-    border-radius: 50%;
-    background-color: red;
-    text-align: center;
-    color:#fff;
-}
 }

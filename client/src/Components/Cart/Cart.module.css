@@ -30,6 +30,7 @@
 }
 
 .cart_container .empty_cart{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,10 +39,16 @@
 }
 
 .cart_container .empty_cart h2 {
+    position: absolute;
     color: red;
     text-align: center;
     animation: empty 2s ease-in infinite;
 }
+
+.cart_container .empty_cart p {
+    padding-top: 40px;
+}
+
 
 @keyframes empty {
   0% {
