@@ -1,11 +1,14 @@
 {
-  "name": "server",
+  "name": "json-server-deploy",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Simple json database to deploy to the host of your choice",
+  "main": "server.js",
   "scripts": {
-  "start": "json-server --watch database.json --port 5000"
+    "start": "node server.js"
   },
+  "keywords": [
+    "json-server,heroku, node, REST API"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
