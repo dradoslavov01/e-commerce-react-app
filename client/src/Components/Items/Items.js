@@ -17,7 +17,7 @@ const ItemsPage = (props) => {
    useEffect(() => {
       getAllItems(category)
          .then(data => setItems(data))
-         .catch(err => alert(err));
+         .catch(err => alert(err))
    }, [category]);
 
    return (

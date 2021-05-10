@@ -21,7 +21,7 @@
     position: absolute;
     font-size: 31px;
     color: red;
-    margin-top: -30px;
+    margin-top: -2px;
     animation: empty 2s ease-in infinite;
 }
 
