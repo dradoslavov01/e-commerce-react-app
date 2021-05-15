@@ -12,6 +12,7 @@ import CartPage from './Components/Cart/Cart';
 import ParchasePage from './Components/Purchase/Purchase';
 import ProfilePage from './Components/Profile/Profile';
 import FavoriteItemsPage from './Components/FavoriteItems/FavoriteItems';
+import Spinner from './Components/Spinner/Spinner'
 
 import { auth } from './utils/firebase';
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" exact component={ItemsPage} />
         <Route path="/category/:category" component={ItemsPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/spinner" component={Spinner} />
         <Route path="/register" component={RegisterPage} />
         <Route path="/contacts" component={ContactsPage} />
         <Route path="/cart" component={CartPage} />

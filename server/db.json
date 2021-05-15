@@ -30,6 +30,9 @@
 
         {"id": 15, "title": "Sweatshirt ", "price": "27.00", "category": "clothes", "img": "https://jkfitness.bg/image/cache/catalog/Benlee/Benlee-men-hooded-sweatshirt-marwood-jkfitness.bg-900x900.jpg"}
 
+    ],
 
+    "users":[
+        {"id": 1, "email": "admin@abv.bg", "password": "admin"}
     ]
 }
