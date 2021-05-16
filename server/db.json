@@ -2,7 +2,7 @@
     "items":[
         {"id": 1, "title": "Casio G-Shock", "price": "212.00", "category": "watches", "img": "https://timer.bg/image/cache/catalog/products/Casio/GA100B4AER-1200x1200.jpg"},
         
-        {"id": 2, "title": "Jeans", "price": "30.00", "category": "clothes", "img": "https://media.gq.com/photos/5e6fa2efddfa2c0008aa9f55/master/w_2000,h_1333,c_limit/gap.jpg"},
+        {"id": 2, "title": "Jeans", "price": "30.00", "category": "clothes", "img": "https://res.cloudinary.com/trunk-club/image/upload/f_auto,q_100,w_600/v1588945818/Blog/Mens-denim-skinny-jeans.jpg"},
 
         {"id": 3, "title": "Jacket", "price": "43.00", "category": "clothes", "img": "https://www.ultralightoutdoorgear.co.uk/images/products/1568711128-58629700.jpg"},
 
