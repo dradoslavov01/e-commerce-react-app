@@ -1,30 +1,32 @@
 import './Items.css';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { getAllItems } from '../../services/services';
 import { AuthContext } from '../../App';
-import Spinner from '../Spinner/Spinner'
+import Spinner from '../Spinner/Spinner';
 
 import { connect } from 'react-redux';
-import { addToCart, addToFavorite } from '../../redux/actions';
+import { addToCart, addToFavorite, setProducts } from '../../redux/actions';
 
 const ItemsPage = (props) => {
-   const [items, setItems] = useState([]);
+
    const isLoggedInUser = useContext(AuthContext);
 
    const category = props.match.params.category;
 
    useEffect(() => {
       getAllItems(category)
-         .then(data => setItems(data))
+         .then(data => props.setProducts(data))
          .catch(err => alert(err))
-   }, [category]);
+   }, [category])
+
+   console.log(props.products);
 
    return (
       <div className="items_container">
-         {items.length > 0
-            ? items.map(item => {
+         {props.products.length > 0
+            ? props.products.map(item => {
                return (
                   <section key={item.id}>
                      { isLoggedInUser
@@ -47,12 +49,19 @@ const ItemsPage = (props) => {
    );
 };
 
+const mapToStateProps = state => {
+   return {
+      products: state.products
+   }
+}
+
 const mapDispatchToProps = (dispatch) => {
    return {
+      setProducts: (products) => dispatch(setProducts(products)),
       addToCart: (id) => dispatch(addToCart(id)),
       addToFavorite: (id) => dispatch(addToFavorite(id))
    };
 };
 
 
-export default connect(null, mapDispatchToProps)(ItemsPage);
+export default connect(mapToStateProps, mapDispatchToProps)(ItemsPage);

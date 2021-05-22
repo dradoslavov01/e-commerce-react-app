@@ -1,5 +1,11 @@
 import * as actionTypes from './types';
 
+export const setProducts = (payload) => {
+    return {
+        type: actionTypes.SET_PRODUCTS,
+        payload: payload
+    }
+}
 
 export const addToCart = (itemId) => {
     return {
@@ -53,7 +59,7 @@ export const adjustQty = (itemId, value) => {
     };
 };
 
-export const loadCurrentIte = (item) => {
+export const loadCurrentItem = (item) => {
     return {
         type: actionTypes.LOAD_CURRENT_ITEM,
         palyload: item

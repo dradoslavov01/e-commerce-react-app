@@ -3,15 +3,11 @@ import { getAllItems } from '../services/services'
 
 
 const INITIAL_STATE = {
-   products: null, //will be array
+   products: [],
    favoriteItems: [],
    cart: [],
    currentItem: null,
 };
-
-getAllItems()
-   .then(data => INITIAL_STATE.products = data)
-   .catch(err => alert(err));
 
 
 const reducer = (state = INITIAL_STATE, action) => {
