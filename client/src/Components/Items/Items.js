@@ -21,8 +21,6 @@ const ItemsPage = (props) => {
          .catch(err => alert(err))
    }, [category])
 
-   console.log(props.products);
-
    return (
       <div className="items_container">
          {props.products.length > 0

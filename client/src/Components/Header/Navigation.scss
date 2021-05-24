@@ -42,6 +42,7 @@
         position: relative;
 
         li {
+            max-width: 110px;
             padding: 8px;
             font-size: 18px;
             transition: 0.3s ease-out;
@@ -49,6 +50,7 @@
             a {
                 display: block;
                 text-decoration: none;
+                text-align: center;
                 background-color: rgb(46, 46, 46);
                 color: #fff;
                 padding: 9px;
@@ -97,7 +99,7 @@
                 flex-direction: column;
                 margin-top: 5px;
                 cursor: pointer;
-                width: 150px;
+                width: 130px;
             }
 
             .dropdown_content {
@@ -133,7 +135,7 @@
 }
 
 
-@media (max-width:600px) {
+@media only screen and (max-width:600px) {
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -147,8 +149,11 @@
                 margin-left: 0px;
             }
 
-            .dropdown_content {
-                position: relative;
+            .dropdown {
+                .dropdown_content {
+                    position: relative;
+                    margin-left: -17px;
+                }
             }
         }
 

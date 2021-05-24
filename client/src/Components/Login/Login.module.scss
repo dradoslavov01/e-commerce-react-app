@@ -91,7 +91,7 @@ body {
 
 
 
-    @media (max-width:600px) {
+    @media only screen and (max-width:600px) {
         .form {
             flex-basis: 350px;
 
