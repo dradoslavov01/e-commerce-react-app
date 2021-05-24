@@ -1,4 +1,4 @@
-import style from './Contacts.module.css';
+import style from './Contacts.module.scss';
 import { useState } from 'react';
 
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -30,7 +30,7 @@ const ContactsPage = () => {
       setFeedback(true);
       setTimeout(() => {
          setFeedback(false)
-      }, 6000);
+      }, 4000);
    };
 
    return (
@@ -56,20 +56,6 @@ const ContactsPage = () => {
                <button>Send</button>
             </form>
 
-            <div className={style.contacts_content}>
-               <div className={style.contacts_icons}>
-                  <LocationOnIcon className={style._icons} />
-                  <PhoneIcon className={style._icons} />
-                  <EmailIcon className={style._icons} />
-               </div>
-
-               <div className={style.information}>
-                  <p>21 Hristo Botev Street</p>
-                  <h3>Sofia, Bulgaria</h3>
-                  <h4>+1 333 123456</h4>
-                  <h5>daniradoslavov@abv.bg</h5>
-               </div>
-            </div>
          </div>
       </>
    );

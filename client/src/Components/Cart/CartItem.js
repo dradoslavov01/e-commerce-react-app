@@ -1,4 +1,4 @@
-import style from './CartItem.module.css';
+import style from './CartItem.module.scss';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { useState, useEffect } from 'react';
 

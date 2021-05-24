@@ -1,4 +1,4 @@
-import style from './FavoriteItems.module.css';
+import style from './FavoriteItems.module.scss';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 

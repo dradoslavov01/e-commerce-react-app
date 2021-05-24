@@ -1,4 +1,4 @@
-import style from './Footer.module.css';
+import style from './Footer.module.scss';
 
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';

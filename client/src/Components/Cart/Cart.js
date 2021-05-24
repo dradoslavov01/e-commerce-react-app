@@ -1,9 +1,9 @@
-import style from './Cart.module.css';
+import style from './Cart.module.scss';
 import { useEffect, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 
-import { removeAllItems } from '../../redux/actions'
+import { removeAllItems } from '../../redux/actions';
 import { connect } from 'react-redux';
 
 const CartPage = (props) => {

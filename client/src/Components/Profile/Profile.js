@@ -1,4 +1,4 @@
-import style from './Profile.module.css';
+import style from './Profile.module.scss';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../App';

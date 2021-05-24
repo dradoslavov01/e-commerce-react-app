@@ -1,4 +1,4 @@
-import './Items.css';
+import './Items.scss';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import { useEffect, useContext } from 'react';

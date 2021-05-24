@@ -1,4 +1,4 @@
-import style from './Purchase.module.css';
+import style from './Purchase.module.scss';
 import { Link } from 'react-router-dom';
 
 const PurchasePage = () => {
