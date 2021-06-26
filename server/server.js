@@ -1,10 +1,16 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
-const port = process.env.PORT || 4000;
+const express = require('express');
+const cors = require('cors');
 
-server.use(middlewares);
-server.use(router);
 
-server.listen(port);
+const app = express();
+
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('hello');
+
+});
+
+const port = process.env.PORT || 4000
+
+app.listen(port || 4000, () => console.log(`Server is listening on port ${port}`));
