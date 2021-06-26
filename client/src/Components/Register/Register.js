@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
-import { auth } from '../../utils/firebase';
 
 const RegisterPage = ({
     history
@@ -26,11 +25,6 @@ const RegisterPage = ({
         if(password !== rePass) {
             return setErrorHandler('Passwords don\'t match!');
         }
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                history.push('/')
-            }).catch(err => setErrorHandler(err.message));
     };
 
     return (

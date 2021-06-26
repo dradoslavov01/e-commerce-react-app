@@ -6,6 +6,11 @@ import App from './App';
 
 import { Provider } from 'react-redux';
 import store from './redux/store'
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.headers.common["Authorization"] = "Bearer " + localStorage.getItem("token");
+
 
 ReactDOM.render(
   <React.StrictMode>

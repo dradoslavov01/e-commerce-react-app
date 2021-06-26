@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Route, Redirect } from 'react-router';
+import { Route } from 'react-router';
 import './App.css';
 
 import Navigation from './Components/Header/Navigation';
@@ -14,22 +13,15 @@ import ProfilePage from './Components/Profile/Profile';
 import FavoriteItemsPage from './Components/FavoriteItems/FavoriteItems';
 import Spinner from './Components/Spinner/Spinner'
 
-import { auth } from './utils/firebase';
 
-export const AuthContext = React.createContext();
 
 function App() {
 
-  const [loggedInUser, setloggedInUser] = useState(null);
-
-  useEffect(() => {
-    auth.onAuthStateChanged(setloggedInUser);
-  }, [loggedInUser]);
 
 
   return (
     <div className="App">
-      <AuthContext.Provider value={loggedInUser}>
+
         <Navigation />
 
         <Route path="/" exact component={ItemsPage} />
@@ -42,14 +34,8 @@ function App() {
         <Route path="/purchase" component={ParchasePage} />
         <Route path="/profile" exact component={ProfilePage} />
         <Route path="/profile/favorite-items" component={FavoriteItemsPage} />
-        <Route path="/logout" render={() => {
-          auth.signOut();
-          return <Redirect to="/" />
-        }}
-        />
 
         <FooterPage />
-      </AuthContext.Provider>
     </div>
   );
 }

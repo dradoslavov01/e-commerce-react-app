@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
-import { auth } from '../../utils/firebase'
-
 const LoginPage = ({
     history
 }) => {
@@ -22,11 +20,7 @@ const LoginPage = ({
             return setErrorHandler('All fields are required!');
         }
 
-        auth.signInWithEmailAndPassword(email, password)
-            .then(() => {
-                history.push('/');
-            })
-            .catch(err => setErrorHandler(err.message));
+        
     };
 
     return (

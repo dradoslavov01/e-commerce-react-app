@@ -1,14 +1,10 @@
 import './Navigation.scss'
-import { useContext } from 'react';
-import { AuthContext } from '../../App';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 
 
 const Navigation = (props) => {
-
-   const loggedInUser = useContext(AuthContext);
 
    return (
       <nav className="navbar">
@@ -29,7 +25,7 @@ const Navigation = (props) => {
             <li>
                <Link to="/contacts">Contacts</Link>
             </li>
-            {loggedInUser
+            {/* {loggedInUser
                ? (<>
                   <li className="cart_container">
                      {props.cart.length > 0
@@ -55,7 +51,8 @@ const Navigation = (props) => {
                </>
                )
                : <li className="signIn"><Link to="/login">Sign in</Link></li>
-            }
+            } */}
+            <li className="signIn"><Link to="/login">Sign in</Link></li>
          </ul>
       </nav>
    );
