@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 const Navigation = (props) => {
 
+
    return (
       <nav className="navbar">
          <h1>eCommerce</h1>
@@ -25,7 +26,7 @@ const Navigation = (props) => {
             <li>
                <Link to="/contacts">Contacts</Link>
             </li>
-            {/* {loggedInUser
+            {props.isLoggedIn
                ? (<>
                   <li className="cart_container">
                      {props.cart.length > 0
@@ -51,8 +52,7 @@ const Navigation = (props) => {
                </>
                )
                : <li className="signIn"><Link to="/login">Sign in</Link></li>
-            } */}
-            <li className="signIn"><Link to="/login">Sign in</Link></li>
+            }
          </ul>
       </nav>
    );
@@ -60,10 +60,12 @@ const Navigation = (props) => {
 
 const mapStateToProps = state => {
    return {
+      isLoggedIn: state.isLoggedIn,
       cart: state.cart,
       favoriteItems: state.favoriteItems
    };
 };
+
 
 
 export default connect(mapStateToProps)(Navigation);

@@ -1,5 +1,14 @@
 import * as actionTypes from './types';
 
+
+
+export const setUser = (payload) => {
+    return {
+        type: actionTypes.SET_USER,
+        payload
+    }
+}
+
 export const setProducts = (payload) => {
     return {
         type: actionTypes.SET_PRODUCTS,

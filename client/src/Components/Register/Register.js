@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
-
+import PersonIcon from '@material-ui/icons/Person';
+import { register } from '../../services/services'
 
 const RegisterPage = ({
     history
@@ -14,17 +15,24 @@ const RegisterPage = ({
     const onRegisterSubmitHandler = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
+        const username = e.target.username.value;
         const password = e.target.password.value;
         const rePass = e.target.rePass.value;
 
-
-        if (!email || !password || !rePass) {
+        if (!username || !email || !password || !rePass) {
             return setErrorHandler('All fields are required!');
         }
 
-        if(password !== rePass) {
+        if (password !== rePass) {
             return setErrorHandler('Passwords don\'t match!');
         }
+
+        register(username, email, password)
+            .then(res => {
+                res.data === 'bad' ? setErrorHandler('Email already exist!') : setErrorHandler(null);
+                history.push('/login')
+            })
+            .catch(err => alert(err));
     };
 
     return (
@@ -32,6 +40,11 @@ const RegisterPage = ({
             <form className={style.form} onSubmit={onRegisterSubmitHandler}>
                 <h2>Create an account</h2>
                 <div className={style.errorMsg}>{errorHandler}</div>
+                <label htmlFor="username">Username</label>
+                <div className={style.input_content}>
+                    <PersonIcon className={style.icons} />
+                    <input id="username" type="text" name="username" placeholder="Enter your username" />
+                </div>
                 <label htmlFor="email">Email</label>
                 <div className={style.input_content}>
                     <EmailIcon className={style.icons} />

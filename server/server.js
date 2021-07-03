@@ -2,18 +2,26 @@ require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const db = require('./dbConnection');
+const auth = require('./middlewears/auth')
+
+const authController = require('./controllers/authController');
+
 
 
 const app = express();
-db();
-
+app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('hello');
+app.use(authController);
 
+app.get("/user", auth, (req, res) => {
+    res.send(req.user);
+    id = req.user._id;
 });
+
+db();
+
 
 const port = process.env.PORT || 4000;
 
-app.listen(port || 4000, () => console.log(`Server is listening on port ${port}`));
+app.listen(port, () => console.log(`Server is listening on port ${port}`));

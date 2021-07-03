@@ -3,6 +3,8 @@ import * as actionTypes from './types';
 
 
 const INITIAL_STATE = {
+   user: {},
+   isLoggedIn: false,
    products: [],
    favoriteItems: [],
    cart: [],
@@ -12,6 +14,12 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
    switch (action.type) {
+      case actionTypes.SET_USER:
+         return {
+            ...state,
+            user: action.payload,
+            isLoggedIn: true,
+         };
       case actionTypes.SET_PRODUCTS:
          return {
             ...state,

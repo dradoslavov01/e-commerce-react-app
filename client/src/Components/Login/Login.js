@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
+import { login } from '../../services/services'
+
 
 const LoginPage = ({
     history
@@ -20,7 +22,28 @@ const LoginPage = ({
             return setErrorHandler('All fields are required!');
         }
 
-        
+        login(email, password)
+            .then(res => {
+                if (res.data === 'email') {
+                    setErrorHandler('Incorrect email');
+                    return;
+                } else if (res.data === 'pass') {
+                    setErrorHandler('Incorrect password')
+                    return;
+                }
+
+                const token = res.data.token;
+                const username = res.data.username
+
+                if (token) {
+                    localStorage.setItem('token', token);
+                    localStorage.setItem('username', username);
+                }
+                history.push('/');
+
+            })
+            .catch(err => alert(err))
+
     };
 
     return (

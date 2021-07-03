@@ -1,3 +1,4 @@
+export const SET_USER = "SET_USER";
 export const SET_PRODUCTS = "SET_PRODUCTS";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const ADD_TO_FAVORITE = "ADD_TO_FAVORITE";
