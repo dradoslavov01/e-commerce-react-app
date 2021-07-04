@@ -28,16 +28,16 @@ const ItemsPage = (props) => {
          {props.products.length > 0
             ? props.products.map(item => {
                return (
-                  <section key={item.id}>
+                  <section key={item._id}>
                      {props.isLoggedIn
-                        ? <FavoriteIcon onClick={() => props.addToFavorite(item.id)} className="fav_icon" />
+                        ? <FavoriteIcon onClick={() => props.addToFavorite(item._id)} className="fav_icon" />
                         : <FavoriteIcon onClick={() => props.history.push('/login')} className="fav_icon" />
                      }
                      <img src={item.img} alt="item_img" />
                      <h5>{item.title}</h5>
                      <p>{item.price}</p>
                      {props.isLoggedIn
-                        ? <button onClick={() => props.addToCart(item.id)}>Add to cart</button>
+                        ? <button onClick={() => props.addToCart(item._id)}>Add to cart</button>
                         : <button onClick={() => props.history.push('/login')}>Add to cart</button>
                      }
                   </section>

@@ -15,13 +15,14 @@ const FavoriteItemsPage = (props) => {
             {props.favoriteItems.length === 0
                ? <h2>You have no favorite items</h2>
                : props.favoriteItems.map(item => {
+                  console.log(props.favoriteItems);
                   return (
-                     <section key={item.id}>
-                        <DeleteForeverIcon onClick={() => props.removeFromFavorite(item.id)} className={style.remove} />
+                     <section key={item._id}>
+                        <DeleteForeverIcon onClick={() => props.removeFromFavorite(item._id)} className={style.remove} />
                         <img src={item.img} alt="item_img" />
                         <h5>{item.title}</h5>
                         <p>{item.price}</p>
-                        <button onClick={() => props.addToCart(item.id)}>Add to cart</button>
+                        <button onClick={() => props.addToCart(item._id)}>Add to cart</button>
                      </section>
                   );
                })

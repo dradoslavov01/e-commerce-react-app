@@ -12,7 +12,10 @@ const CartPage = (props) => {
 
    useEffect(() => {
       let price = 0;
-      props.cart.forEach(item => price += (item.price * item.qty));
+      props.cart.forEach(item => {
+         price += (item.price * item.qty);
+      });
+      
       setTotalPrice(price.toFixed(2));
    }, [props.cart, totalPrice, setTotalPrice]);
 
@@ -21,8 +24,9 @@ const CartPage = (props) => {
       <div className={style.cart_container}>
          {props.cart.map(item => {
             return (
-               <CartItem key={item.id} items={item} />
+               <CartItem key={item._id} items={item} />
             )
+            
          })}
          {props.cart.length > 0
             ? <div className={style.cart_purchase}>

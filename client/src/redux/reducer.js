@@ -27,13 +27,13 @@ const reducer = (state = INITIAL_STATE, action) => {
          };
       case actionTypes.ADD_TO_CART:
 
-         const product = state.products.find(item => item.id === action.payload.id);
-         const inCart = state.cart.find(item => item.id === action.payload.id ? true : false);
+         const product = state.products.find(item => item._id === action.payload._id);
+         const inCart = state.cart.find(item => item._id === action.payload._id ? true : false);
 
          return {
             ...state,
             cart: inCart
-               ? state.cart.map((item) => item.id === action.payload.id
+               ? state.cart.map((item) => item._id === action.payload._id
                   ? { ...item, qty: item.qty + 1 }
                   : item
                )
@@ -42,17 +42,17 @@ const reducer = (state = INITIAL_STATE, action) => {
       case actionTypes.REMOVE_FROM_CART:
          return {
             ...state,
-            cart: state.cart.filter(item => item.id !== action.payload.id)
+            cart: state.cart.filter(item => item._id !== action.payload._id)
          };
       case actionTypes.ADD_TO_FAVORITE:
 
-         const item = state.products.find(item => item.id === action.payload.id);
-         const inFavorite = state.favoriteItems.find(item => item.id === action.payload.id ? true : false);
+         const item = state.products.find(item => item._id === action.payload._id);
+         const inFavorite = state.favoriteItems.find(item => item._id === action.payload._id ? true : false);
 
          return {
             ...state,
             favoriteItems: inFavorite
-               ? state.favoriteItems.map((item) => item.id === action.payload.id
+               ? state.favoriteItems.map((item) => item._id === action.payload._id
                   ? { ...item }
                   : item
                )
@@ -61,12 +61,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       case actionTypes.REMOVE_FROM_FAVORITE:
          return {
             ...state,
-            favoriteItems: state.favoriteItems.filter(item => item.id !== action.payload.id)
+            favoriteItems: state.favoriteItems.filter(item => item._id !== action.payload._id)
          };
       case actionTypes.ADJUST_QTY:
          return {
             ...state,
-            cart: state.cart.map(item => item.id === action.payload.id
+            cart: state.cart.map(item => item._id === action.payload._id
                ? { ...item, qty: action.payload.qty }
                : item
             ),

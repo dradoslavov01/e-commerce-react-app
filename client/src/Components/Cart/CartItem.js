@@ -21,7 +21,7 @@ const CartItem = (props) => {
       let value = Number(e.target.parentNode.children[1].textContent);
       value += 1;
       setCount(value);
-      props.adjustQty(props.items.id, value);
+      props.adjustQty(props.items._id, value);
    };
 
    const decrement = (e) => {
@@ -29,7 +29,7 @@ const CartItem = (props) => {
          let value = Number(e.target.parentNode.children[1].textContent);
          value -= 1;
          setCount(value);
-         props.adjustQty(props.items.id, value);
+         props.adjustQty(props.items._id, value);
       };
    };
 
@@ -44,7 +44,7 @@ const CartItem = (props) => {
             <button onClick={increment}>+</button>
          </div>
          <h2>{itemPrice}$</h2>
-         <DeleteForeverIcon onClick={() => props.removeFromCart(props.items.id)} className={style.remove_item} />
+         <DeleteForeverIcon onClick={() => props.removeFromCart(props.items._id)} className={style.remove_item} />
       </section>
    );
 };
