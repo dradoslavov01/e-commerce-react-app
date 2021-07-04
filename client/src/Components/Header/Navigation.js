@@ -47,7 +47,7 @@ const Navigation = (props) => {
                      <Link to="/profile" className="user">Profile</Link>
                   </li>
                   <li>
-                     <Link to="/logout" className="user">Logout</Link>
+                     <Link to="/logout" className="user" onClick={() => {window.location.reload(); localStorage.clear()}}>Logout</Link>
                   </li>
                </>
                )

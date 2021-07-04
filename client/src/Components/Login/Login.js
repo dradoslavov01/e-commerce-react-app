@@ -38,8 +38,8 @@ const LoginPage = ({
                 if (token) {
                     localStorage.setItem('token', token);
                     localStorage.setItem('username', username);
+                    window.location.reload();
                 }
-                history.push('/');
 
             })
             .catch(err => alert(err))

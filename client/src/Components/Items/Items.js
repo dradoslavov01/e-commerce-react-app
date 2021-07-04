@@ -15,8 +15,12 @@ const ItemsPage = (props) => {
 
    useEffect(() => {
       getAllItems(category)
-         .then(data => props.setProducts(data))
-         .catch(err => alert(err))
+         .then(res => {
+            const items = category ? res.data.filter(item => item.category === category) : res.data;
+            props.setProducts(items)
+         })
+         .catch(err => alert(err));
+         
    }, [category])
 
    return (

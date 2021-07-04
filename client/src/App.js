@@ -26,34 +26,44 @@ function App(props) {
   useEffect(() => {
     isAuth()
       .then(res => {
+        console.log(res.data);
         props.setUser(res.data);
       })
       .catch((err) => console.log(err));
 
   }, []);
 
-  return (
-    <div className="App">
+  if (props.isLoggedIn) {
+    if(history.location.pathname === '/login' || history.location.pathname === '/register') {
+      history.push('/')
+    }
+  }
 
-      <Navigation />
+    return (
+      <div className="App">
 
-      <Route path="/" exact component={ItemsPage} />
-      <Route path="/category/:category" component={ItemsPage} />
-      <Route path="/login" component={LoginPage} />
-      <Route path="/spinner" component={Spinner} />
-      <Route path="/register" component={RegisterPage} />
-      <Route path="/contacts" component={ContactsPage} />
-      <Route path="/cart" component={CartPage} />
-      <Route path="/purchase" component={ParchasePage} />
-      <Route path="/profile" exact component={ProfilePage} />
-      <Route path="/profile/favorite-items" component={FavoriteItemsPage} />
-      <Route path="/logout" render={() => {
-        localStorage.clear();
-        history.push('/');
-      }} />
-      <FooterPage />
-    </div>
-  );
+        <Navigation />
+
+        <Route path="/" exact component={ItemsPage} />
+        <Route path="/category/:category" component={ItemsPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/spinner" component={Spinner} />
+        <Route path="/register" component={RegisterPage} />
+        <Route path="/contacts" component={ContactsPage} />
+        <Route path="/cart" component={CartPage} />
+        <Route path="/purchase" component={ParchasePage} />
+        <Route path="/profile" exact component={ProfilePage} />
+        <Route path="/profile/favorite-items" component={FavoriteItemsPage} />
+
+        <FooterPage />
+      </div>
+    );
+}
+
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -62,4 +72,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
