@@ -26,7 +26,6 @@ function App(props) {
   useEffect(() => {
     isAuth()
       .then(res => {
-        console.log(res.data);
         props.setUser(res.data);
       })
       .catch((err) => console.log(err));
